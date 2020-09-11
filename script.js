@@ -91,8 +91,6 @@ function generatePassword() {
 
       return userPassword;
   }
-
-
 }
 
 // Write password to the #password input
