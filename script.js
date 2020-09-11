@@ -40,8 +40,31 @@ function generatePassword() {
       confirmNumbers = confirm("Click OK if you want numbers in your password");
       // user WANTS numbers
       if (confirmNumbers) {
+        // ask user if they want lowercase letters
+        confirmLowercase = confirm("Click OK if you want lowercase letters");
+        // user WANTS lowercase letters
+        if (confirmLowercase) {
+          // ask user if they want uppercase letters
+          confirmUppercase = confirm("Click OK if you want uppercase letters");
+          // user WANTS uppercase letters
+          if (confirmUppercase) {
 
-        return "i want special and numbers"
+
+          }
+          // user DOESN'T want uppercase letters
+          else {
+
+            
+          }
+
+        }
+        // user DOESN't want lowercase letters
+        else {
+
+
+        }
+
+    
 
 
 
