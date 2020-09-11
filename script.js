@@ -85,8 +85,6 @@ function generatePassword() {
       //choosing random index from combined array
       passwordArray.push(combinedArray[(Math.floor(Math.random() * combinedArray.length))]);
 
-    
-    
     }
       //turning passwordArray into a string
       userPassword = passwordArray.join("");
