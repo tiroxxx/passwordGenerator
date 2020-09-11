@@ -6,16 +6,17 @@ var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+
 // array of the character arrays
 var ultimateArray = [lowercase, uppercase, numb, specialChar];
 // array where I will put the password
 var combinedArray = [];
 
+var confirmSpecialChar;
+var confirmUppercase;
+var confirmLowercase;
+var confirmNumbers;
 
-var confirmSpecialChar = false;
-var confirmUppercase = false;
-var confirmLowercase = false;
-var confirmNumbers = false;
 
 function generateChar() {
   // random number between 0 and length of ultimateArray - 1
@@ -38,7 +39,7 @@ function generatePassword() {
   // password not large enough
   if (numberOfChars < 8) {
     alert("Password length must be at least 8 characters");
-    generateChar();
+
     return "Try Again!"
   }
   // password too large
@@ -51,15 +52,35 @@ function generatePassword() {
 
     // ask user if they wants special characters
     confirmSpecialChar = confirm("Click OK if you want special characters in your password");
- 
+    // they WANT special characters
+    if (confirmSpecialChar) {
+      // looping through specialChar array
+      for (var i = 0; i < specialChar.length; i++) {
+          // putting all the stuff from specialChar array into combinedArray
+          combinedArray.push(specialChar[i]);
+      }
+    }
+    
     // ask user if they want numbers
     confirmNumbers = confirm("Click OK if you want numbers in your password");
+    // they WANT numbers
+    if (confirmNumbers) {
+      // looping through numb array
+      for (var i = 0; i < numb.length; i++) {
+        combinedArray.push(numb[i]);
+      }
+
+    }
 
     // ask user if they want lowercase letters
     confirmLowercase = confirm("Click OK if you want lowercase letters in your password");
  
     // ask user if they want uppercase letters
     confirmUppercase = confirm("CLick OK if you want uppercase letters in your password");
+
+
+
+  }
 
 
 
