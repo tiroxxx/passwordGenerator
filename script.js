@@ -9,6 +9,12 @@ var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", "
 // array where I will put the password
 var combinedArray = [];
 
+var confirmSpecialChar;
+var confirmUppercase;
+var confirmLowercase;
+var confirmNumbers;
+
+
 function generatePassword() {
   // asking how big does the user want the password to be
   var numberOfChars = prompt("How many characters would you like your password to contain?");
@@ -20,10 +26,24 @@ function generatePassword() {
   }
   else if (numberOfChars > 128) {
     alert("Password length must be less than 129 characters");
-    
+
     return "Try Again!"
   }
+
+  // if user enters correct value, run this code!
   else {
+    // ask user if he wants special characters in the password
+    confirmSpecialChar = confirm("Click OK if you want special characters in your passwork");
+    // user WANTS special characters
+    if (confirmSpecialChar) {
+      return "I do want special characters"
+
+    
+    }
+
+    // user DOESN'T want special characters
+    
+
 
 
 
