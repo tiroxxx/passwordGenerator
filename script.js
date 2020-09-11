@@ -7,20 +7,19 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var numb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-// array where I will put all the other arrays 
-var combinedArray = [];
-// array where i will put the password
-var passwordArray = [];
-
-var confirmSpecialChar;
-var confirmUppercase;
-var confirmLowercase;
-var confirmNumbers;
-var userPassword;
-
+// // array where I will put all the other arrays 
+// var combinedArray = [];
+// // array where i will put the password
+// var passwordArray = [];
 
 
 function generatePassword() {
+  // array where I will put all the other arrays 
+  var combinedArray = [];
+  // array where i will put the password
+  var passwordArray = [];
+
+
   // asking how big does the user want the password to be
   var numberOfChars = prompt("How many characters would you like your password to contain?");
   // password not large enough
@@ -37,18 +36,18 @@ function generatePassword() {
   else {
 
     // ask user if they wants special characters
-    confirmSpecialChar = confirm("Click OK if you want special characters in your password");
+    var confirmSpecialChar = confirm("Click OK if you want special characters in your password");
     // they WANT special characters
     if (confirmSpecialChar) {
       // looping through specialChar array
       for (var i = 0; i < specialChar.length; i++) {
-          // putting all the stuff from specialChar array into combinedArray
-          combinedArray.push(specialChar[i]);
+        // putting all the stuff from specialChar array into combinedArray
+        combinedArray.push(specialChar[i]);
       }
     }
-    
+
     // ask user if they want numbers
-    confirmNumbers = confirm("Click OK if you want numbers in your password");
+    var confirmNumbers = confirm("Click OK if you want numbers in your password");
     // they WANT numbers
     if (confirmNumbers) {
       // looping through numb array
@@ -59,7 +58,7 @@ function generatePassword() {
     }
 
     // ask user if they want lowercase letters
-    confirmLowercase = confirm("Click OK if you want lowercase letters in your password");
+    var confirmLowercase = confirm("Click OK if you want lowercase letters in your password");
     // they WANT lowercase letters
     if (confirmLowercase) {
       // looping through lowercase array
@@ -68,9 +67,9 @@ function generatePassword() {
         combinedArray.push(lowercase[i]);
       }
     }
- 
+
     // ask user if they want uppercase letters
-    confirmUppercase = confirm("CLick OK if you want uppercase letters in your password");
+    var confirmUppercase = confirm("CLick OK if you want uppercase letters in your password");
     // they WANT uppercase letters
     if (confirmUppercase) {
       // looping through uppercase array
@@ -86,10 +85,10 @@ function generatePassword() {
       passwordArray.push(combinedArray[(Math.floor(Math.random() * combinedArray.length))]);
 
     }
-      //turning passwordArray into a string
-      userPassword = passwordArray.join("");
+    //turning passwordArray into a string
+    userPassword = passwordArray.join("");
 
-      return userPassword;
+    return userPassword;
   }
 }
 
