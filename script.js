@@ -7,11 +7,6 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var numb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-// // array where I will put all the other arrays 
-// var combinedArray = [];
-// // array where i will put the password
-// var passwordArray = [];
-
 
 function generatePassword() {
   // array where I will put all the other arrays 
@@ -25,12 +20,17 @@ function generatePassword() {
   // password not large enough
   if (numberOfChars < 8) {
     alert("Password length must be at least 8 characters");
-    return "Try Again!"
+    return "Try Again!";
   }
   // password too large
   else if (numberOfChars > 128) {
     alert("Password length must be less than 129 characters");
-    return "Try Again!"
+    return "Try Again!";
+  }
+  // password is not a letter
+  else if (isNaN(numberOfChars) === true) {
+    alert("Nice try buddy, length cannot be measured in letters")
+    return "Try Again!";
   }
   // if user enters correct value, run this code!
   else {
