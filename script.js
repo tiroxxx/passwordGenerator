@@ -6,6 +6,8 @@ var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
+// array of the character arrays
+var ultimateArray = [lowercase, uppercase, numb, specialChar];
 // array where I will put the password
 var combinedArray = [];
 
@@ -15,21 +17,21 @@ var confirmLowercase;
 var confirmNumbers;
 
 
+
+
 function generatePassword() {
   // asking how big does the user want the password to be
   var numberOfChars = prompt("How many characters would you like your password to contain?");
-
+  // password not large enough
   if (numberOfChars < 8) {
     alert("Password length must be at least 8 characters");
-
     return "Try Again!"
   }
+  // password too large
   else if (numberOfChars > 128) {
     alert("Password length must be less than 129 characters");
-
     return "Try Again!"
   }
-
   // if user enters correct value, run this code!
   else {
     // ask user if they wants special characters
@@ -54,7 +56,7 @@ function generatePassword() {
           // user DOESN'T want uppercase letters
           else {
 
-            
+
           }
 
         }
