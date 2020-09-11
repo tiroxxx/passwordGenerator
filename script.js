@@ -7,29 +7,16 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var numb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-// array of the character arrays
-var ultimateArray = [lowercase, uppercase, numb, specialChar];
-// array where I will put the password
+// array where I will put all the other arrays 
 var combinedArray = [];
+// array where i will put the password
+var passwordArray = [];
 
 var confirmSpecialChar;
 var confirmUppercase;
 var confirmLowercase;
 var confirmNumbers;
-
-
-function generateChar() {
-  // random number between 0 and length of ultimateArray - 1
-  var arrayIndex1 = Math.floor(Math.random() * ultimateArray.length);
-  alert("value of arrayIndex1" , arrayIndex1);
-  // random number between 0 and length of a random array length inside the ultimate array - 1
-  var arrayIndex2 = Math.floor(Math.random() * ultimateArray[arrayndex1].length);
-  alert("value of arrayIndex2");
-  // getting a random character out of all arrays
-  var newChar = ultimateArray[arrayIndex1][arrayIndex2];
-
-  return newChar;
-}
+var userPassword;
 
 
 
@@ -39,7 +26,6 @@ function generatePassword() {
   // password not large enough
   if (numberOfChars < 8) {
     alert("Password length must be at least 8 characters");
-
     return "Try Again!"
   }
   // password too large
@@ -90,10 +76,24 @@ function generatePassword() {
       // looping through uppercase array
       for (var i = 0; i < uppercase.length; i++) {
         // putting all the stuff from uppercase array into combinedArray
-        combinedArray.push(lowercase[i]);
+        combinedArray.push(uppercase[i]);
       }
     }
 
+    // looping to build the array with the password
+    for (var i = 0; i < numberOfChars; i++) {
+      //choosing random index from combined array
+      passwordArray.push(combinedArray[(Math.floor(Math.random() * combinedArray.length))]);
+
+    
+    
+
+      
+    }
+      //turning passwordArray into a string
+      userPassword = passwordArray.join("");
+
+      return userPassword;
 
   }
 
