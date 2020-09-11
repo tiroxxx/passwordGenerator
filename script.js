@@ -67,23 +67,35 @@ function generatePassword() {
     if (confirmNumbers) {
       // looping through numb array
       for (var i = 0; i < numb.length; i++) {
+        // putting all the stuff from numb array into combinedArray
         combinedArray.push(numb[i]);
       }
-
     }
 
     // ask user if they want lowercase letters
     confirmLowercase = confirm("Click OK if you want lowercase letters in your password");
+    // they WANT lowercase letters
+    if (confirmLowercase) {
+      // looping through lowercase array
+      for (var i = 0; i < lowercase.length; i++) {
+        // putting all the stuff from lowercase array into combinedArray
+        combinedArray.push(lowercase[i]);
+      }
+    }
  
     // ask user if they want uppercase letters
     confirmUppercase = confirm("CLick OK if you want uppercase letters in your password");
-
+    // they WANT uppercase letters
+    if (confirmUppercase) {
+      // looping through uppercase array
+      for (var i = 0; i < uppercase.length; i++) {
+        // putting all the stuff from uppercase array into combinedArray
+        combinedArray.push(lowercase[i]);
+      }
+    }
 
 
   }
-
-
-
 
 
 }
