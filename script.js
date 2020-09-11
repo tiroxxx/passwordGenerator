@@ -87,8 +87,6 @@ function generatePassword() {
 
     
     
-
-      
     }
       //turning passwordArray into a string
       userPassword = passwordArray.join("");
