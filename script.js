@@ -32,17 +32,37 @@ function generatePassword() {
 
   // if user enters correct value, run this code!
   else {
-    // ask user if he wants special characters in the password
-    confirmSpecialChar = confirm("Click OK if you want special characters in your passwork");
+    // ask user if they wants special characters
+    confirmSpecialChar = confirm("Click OK if you want special characters in your password");
     // user WANTS special characters
     if (confirmSpecialChar) {
-      return "I do want special characters"
+      // ask user if they want numbers
+      confirmNumbers = confirm("Click OK if you want numbers in your password");
+      // user WANTS numbers
+      if (confirmNumbers) {
+
+        return "i want special and numbers"
+
+
+
+      }
+      // user DOESN'T want numbers
+      else {
+
+
+      }
+
+
+
+     
 
     
     }
 
     // user DOESN'T want special characters
-    
+    else {
+
+    }
 
 
 
