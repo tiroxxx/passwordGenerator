@@ -10,25 +10,25 @@ var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", "
 
 function generatePassword() {
   // array where I will put all the other arrays 
-  var combinedArray = [];
+  var bigArray = [];
   // array where i will put the password
   var passwordArray = [];
 
 
   // asking how big does the user want the password to be
-  var numberOfChars = prompt("How many characters would you like your password to contain?");
+  var lengthOfPass = prompt("How many characters would you like your password to contain?");
   // password not large enough
-  if (numberOfChars < 8) {
+  if (lengthOfPass < 8) {
     alert("Password length must be at least 8 characters");
     return "Try Again!";
   }
   // password too large
-  else if (numberOfChars > 128) {
+  else if (lengthOfPass > 128) {
     alert("Password length must be less than 129 characters");
     return "Try Again!";
   }
   // password is not a letter
-  else if (isNaN(numberOfChars) === true) {
+  else if (isNaN(lengthOfPass) === true) {
     alert("Nice try buddy, length cannot be measured in letters")
     return "Try Again!";
   }
@@ -36,53 +36,53 @@ function generatePassword() {
   else {
 
     // ask user if they wants special characters
-    var confirmSpecialChar = confirm("Click OK if you want special characters in your password");
+    var wantSpecialChar = confirm("Click OK if you want special characters in your password");
     // they WANT special characters
-    if (confirmSpecialChar) {
+    if (wantSpecialChar) {
       // looping through specialChar array
       for (var i = 0; i < specialChar.length; i++) {
-        // putting all the stuff from specialChar array into combinedArray
-        combinedArray.push(specialChar[i]);
+        // putting all the stuff from specialChar array into bigArray
+        bigArray.push(specialChar[i]);
       }
     }
 
     // ask user if they want numbers
-    var confirmNumbers = confirm("Click OK if you want numbers in your password");
+    var wantNumbers = confirm("Click OK if you want numbers in your password");
     // they WANT numbers
-    if (confirmNumbers) {
+    if (wantNumbers) {
       // looping through numb array
       for (var i = 0; i < numb.length; i++) {
-        // putting all the stuff from numb array into combinedArray
-        combinedArray.push(numb[i]);
+        // putting all the stuff from numb array into bigArray
+        bigArray.push(numb[i]);
       }
     }
 
     // ask user if they want lowercase letters
-    var confirmLowercase = confirm("Click OK if you want lowercase letters in your password");
+    var wantLowercase = confirm("Click OK if you want lowercase letters in your password");
     // they WANT lowercase letters
-    if (confirmLowercase) {
+    if (wantLowercase) {
       // looping through lowercase array
       for (var i = 0; i < lowercase.length; i++) {
-        // putting all the stuff from lowercase array into combinedArray
-        combinedArray.push(lowercase[i]);
+        // putting all the stuff from lowercase array into bigArray
+        bigArray.push(lowercase[i]);
       }
     }
 
     // ask user if they want uppercase letters
-    var confirmUppercase = confirm("CLick OK if you want uppercase letters in your password");
+    var wantUppercase = confirm("CLick OK if you want uppercase letters in your password");
     // they WANT uppercase letters
-    if (confirmUppercase) {
+    if (wantUppercase) {
       // looping through uppercase array
       for (var i = 0; i < uppercase.length; i++) {
-        // putting all the stuff from uppercase array into combinedArray
-        combinedArray.push(uppercase[i]);
+        // putting all the stuff from uppercase array into bigArray
+        bigArray.push(uppercase[i]);
       }
     }
 
     // looping to build the array with the password
-    for (var i = 0; i < numberOfChars; i++) {
+    for (var i = 0; i < lengthOfPass; i++) {
       //choosing random index from combined array
-      passwordArray.push(combinedArray[(Math.floor(Math.random() * combinedArray.length))]);
+      passwordArray.push(bigArray[(Math.floor(Math.random() * bigArray.length))]);
 
     }
     //turning passwordArray into a string
